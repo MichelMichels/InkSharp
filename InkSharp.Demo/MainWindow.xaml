@@ -1,0 +1,53 @@
+﻿<Window x:Class="InkSharp.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InkSharp.Demo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowState="Maximized"
+        d:DataContext="{d:DesignInstance Type={x:Type local:MainViewModel}}">
+    <ScrollViewer>
+        <DockPanel Margin="64 32">
+            <StackPanel DockPanel.Dock="Top" Margin="0 0 0 16">
+                <TextBlock Text="Handtekening" Margin="0 0 0 8" />
+                <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 0 16">
+                    <InkCanvas Height="100" Strokes="{Binding Signature}" />
+                </Border>
+
+                <WrapPanel>
+                    <WrapPanel.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Margin" Value="0 0 16 0" />
+                            <Setter Property="Padding" Value="8" />
+                            <Setter Property="Width" Value="100" />
+                        </Style>
+                    </WrapPanel.Resources>
+                    <Button Content="Print" Command="{Binding PrintBitmapCommand}" Margin="0 0 16 0"/>
+                    <Button Content="Clear" Command="{Binding ClearCommand}" />
+                    <Button Content="Save" Command="{Binding SaveCommand}" />
+                    <Button Content="Base64" Command="{Binding EncodeCommand}" />
+                    <Button Content="Array" Command="{Binding ArrayCommand}" />
+                </WrapPanel>
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Top" Margin="0 0 0 16">
+                <TextBlock Text="Printed signature" Margin="0 0 0 8" />
+                <Border BorderBrush="Black" BorderThickness="1">
+                    <Image Stretch="None" HorizontalAlignment="Left"  Height="100" Source="{Binding PrintedSignature}" />
+                </Border>
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Top" Margin="0 0 0 16">
+                <TextBlock Text="Base64 string" Margin="0 0 0 8" />
+                <TextBox Text="{Binding Base64EncodedImage}" TextWrapping="Wrap" MaxLines="50" />
+            </StackPanel>
+
+            <StackPanel Margin="0 0 0 16">
+                <TextBlock Text="Array string" Margin="0 0 0 8" />
+                <TextBox Text="{Binding ArrayString}" TextWrapping="Wrap" MaxLines="50" />
+            </StackPanel>
+        </DockPanel>
+    </ScrollViewer>
+</Window>
