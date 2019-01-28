@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InkSharp.Demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="InkSharp | Demo"
         WindowState="Maximized"
         d:DataContext="{d:DesignInstance Type={x:Type local:MainViewModel}}">
     <ScrollViewer>
         <DockPanel Margin="64 32">
             <StackPanel DockPanel.Dock="Top" Margin="0 0 0 16">
-                <TextBlock Text="Handtekening" Margin="0 0 0 8" />
+                <TextBlock Text="Signature" Margin="0 0 0 8" />
                 <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 0 16">
                     <InkCanvas Height="100" Strokes="{Binding Signature}" />
                 </Border>
