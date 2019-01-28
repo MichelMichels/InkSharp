@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InkSharp", "InkSharp\InkSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InkSharp.Demo", "InkSharp.Demo\InkSharp.Demo.csproj", "{1BD96C9C-9548-4B1B-8B71-0ED37624F29B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{907E1EFF-6037-4345-BA38-558451361994}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
