@@ -16,6 +16,7 @@ namespace InkSharp.Interfaces
         float PenStroke { get; set; }
         Color Background { get; set; }
         Color PenColor { get; set; }
+        bool IsEmpty { get; }
 
         // Methods
         Bitmap ToBitmap();

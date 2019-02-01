@@ -13,7 +13,7 @@ Compile the `InkSharp`-project in release-mode and add a reference of InkSharp.d
 
 ## Authors
 
-* **Michel Michels** - *Initial work* - [PurpleBooth](https://github.com/MichelMichels)
+* **Michel Michels** - *Initial work* - [GitHub](https://github.com/MichelMichels)
 
 See also the list of [contributors](https://github.com/MichelMichels/InkSharp/contributors) who participated in this project.
 

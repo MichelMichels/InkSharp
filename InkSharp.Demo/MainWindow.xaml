@@ -13,7 +13,23 @@
             <StackPanel DockPanel.Dock="Top" Margin="0 0 0 16">
                 <TextBlock Text="Signature" Margin="0 0 0 8" />
                 <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 0 16">
-                    <InkCanvas Height="100" Strokes="{Binding Signature}" />
+                    <Grid>
+                        <InkCanvas Height="100" Strokes="{Binding Signature}" />
+
+                        <WrapPanel>
+                            <TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Signature.IsEmpty}" Value="true">
+                                                <Setter Property="Text" Value="The signature is empty" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </WrapPanel>
+                    </Grid>
                 </Border>
 
                 <WrapPanel>

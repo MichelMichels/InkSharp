@@ -14,10 +14,11 @@ using Color = System.Drawing.Color;
 using Pen = System.Drawing.Pen;
 using System.IO;
 using System.Drawing.Imaging;
+using System.ComponentModel;
 
 namespace InkSharp
 {
-    public class Drawing : StrokeCollection, IDrawing
+    public class Drawing : StrokeCollection, IDrawing, INotifyPropertyChanged
     {
         // Static
         public static Bitmap Empty => GetEmptyBitmap();
@@ -29,7 +30,7 @@ namespace InkSharp
             SmoothingMode = SmoothingMode.AntiAlias;
             PenColor = Color.Black;
             PenStroke = 2.0f;
-            Background = Color.White;
+            Background = Color.White;            
         }
 
         // Properties
@@ -38,6 +39,10 @@ namespace InkSharp
         public virtual Color PenColor { get; set; }
         public virtual Color Background { get; set; }
         public virtual SmoothingMode SmoothingMode { get; set; }
+        public bool IsEmpty
+        {
+            get => Items.Count == 0;
+        }             
 
         // Private (static)
         private static Bitmap GetEmptyBitmap()
@@ -117,6 +122,13 @@ namespace InkSharp
         protected int Floor(double number)
         {
             return (int)Math.Floor(number);
+        }
+        protected override void OnStrokesChanged(StrokeCollectionChangedEventArgs e)
+        {
+            base.OnStrokesChanged(e);
+
+            var args = new PropertyChangedEventArgs(nameof(IsEmpty));
+            OnPropertyChanged(args);
         }
     }
 }
