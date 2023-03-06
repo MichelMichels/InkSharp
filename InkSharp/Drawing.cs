@@ -1,20 +1,18 @@
-﻿using InkSharp.Interfaces;
+﻿using InkSharp.Extensions;
+using InkSharp.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Ink;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
+using System.Windows.Ink;
 using System.Windows.Input;
-using InkSharp.Extensions;
 using System.Windows.Media;
 using Color = System.Drawing.Color;
 using Pen = System.Drawing.Pen;
-using System.IO;
-using System.Drawing.Imaging;
-using System.ComponentModel;
 
 namespace InkSharp
 {
