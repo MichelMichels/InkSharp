@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InkSharp\MichelMichels.InkSharp.csproj" />
+    <ProjectReference Include="..\MichelMichels.InkSharp\MichelMichels.InkSharp.csproj" />
   </ItemGroup>
 
 </Project>
