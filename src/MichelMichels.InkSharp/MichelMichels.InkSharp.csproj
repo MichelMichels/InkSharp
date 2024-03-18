@@ -8,22 +8,22 @@
 		<Authors>Michel Michels</Authors>
 		<Title>InkSharp</Title>
 		<Product>InkSharp</Product>
-		<Version>2.0.0</Version>
+		<Version>8.0.0</Version>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>
-      * .NET8.0 upgrade
-      * Breaking change: namespace change to MichelMichels.InkSharp
-    </PackageReleaseNotes>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageReleaseNotes>
+			* .NET8.0 upgrade
+			* Breaking change: namespace change to MichelMichels.InkSharp
+		</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="System.Drawing.Common" Version="8.0.3" />
+		<PackageReference Include="System.Drawing.Common" Version="8.0.3" />
 	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\README.md" Pack="true" PackagePath=""/>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
 
 </Project>
