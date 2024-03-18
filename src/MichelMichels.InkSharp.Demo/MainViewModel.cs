@@ -24,7 +24,7 @@ public class MainViewModel : BaseViewModel
     }
 
     public ICommand PrintBitmapCommand => new Command(() => PrintedSignature = Signature.ToImageSource());
-    public ICommand ClearCommand => new Command(() => Signature.Clear());
+    public ICommand ClearCommand => new Command(() => Clear());
     public ICommand SaveCommand => new Command(() => Save());
     public ICommand EncodeCommand => new Command(() => Base64EncodedImage = Signature.ToBase64());
     public ICommand ArrayCommand => new Command(() => ArrayString = Signature.ToString());
@@ -50,6 +50,12 @@ public class MainViewModel : BaseViewModel
         set => SetProperty(ref _arrayString, value);
     }
 
+    private void Clear()
+    {
+        Signature.Clear();
+        Base64EncodedImage = string.Empty;
+        ArrayString = string.Empty;
+    }
     private void Save()
     {
         var saveFileDialog = new SaveFileDialog();
