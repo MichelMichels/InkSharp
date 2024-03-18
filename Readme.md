@@ -9,7 +9,7 @@
 <br />
 
 <div align="center">
-    Easily convert WPF touch input to `Bitmap` files.
+    Easily convert <code>InkCanvas</code> input to <code>.bmp</code> files.
 </div>
 
 <br />
