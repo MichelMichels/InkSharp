@@ -18,10 +18,8 @@ namespace MichelMichels.InkSharp;
 
 public class Drawing : StrokeCollection, IDrawing, INotifyPropertyChanged
 {
-    // Static
     public static Bitmap Empty => GetEmptyBitmap();
 
-    // Constructors
     public Drawing()
     {
         DPI = 96f;
@@ -31,7 +29,6 @@ public class Drawing : StrokeCollection, IDrawing, INotifyPropertyChanged
         Background = Color.White;
     }
 
-    // Properties
     public virtual float DPI { get; set; }
     public virtual float PenStroke { get; set; }
     public virtual Color PenColor { get; set; }
@@ -42,7 +39,6 @@ public class Drawing : StrokeCollection, IDrawing, INotifyPropertyChanged
         get => Items.Count == 0;
     }
 
-    // Private (static)
     private static Bitmap GetEmptyBitmap()
     {
         var tmp = new Bitmap(1, 1);
@@ -50,7 +46,6 @@ public class Drawing : StrokeCollection, IDrawing, INotifyPropertyChanged
         return tmp;
     }
 
-    // Methods
     public virtual Bitmap ToBitmap()
     {
         var allPoints = GetAllPoints();
@@ -112,7 +107,6 @@ public class Drawing : StrokeCollection, IDrawing, INotifyPropertyChanged
         return ToByteArray().ToPrettyString();
     }
 
-    // Protected
     protected IEnumerable<StylusPoint> GetAllPoints()
     {
         return Items.SelectMany(x => x.StylusPoints);
