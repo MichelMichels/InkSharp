@@ -41,9 +41,9 @@ public class Drawing : StrokeCollection, IDrawing, INotifyPropertyChanged
 
     private static Bitmap GetEmptyBitmap()
     {
-        var tmp = new Bitmap(1, 1);
-        tmp.SetPixel(0, 0, Color.White);
-        return tmp;
+        Bitmap emptyBitmap = new(1, 1);
+        emptyBitmap.SetPixel(0, 0, Color.White);
+        return emptyBitmap;
     }
 
     public virtual Bitmap ToBitmap()
@@ -51,7 +51,9 @@ public class Drawing : StrokeCollection, IDrawing, INotifyPropertyChanged
         var allPoints = GetAllPoints();
 
         if (allPoints.Count() <= 1)
+        {
             return Empty;
+        }
 
         var horizontalOffset = (int)allPoints.Min(point => point.X);
         var verticalOffset = (int)allPoints.Min(point => point.Y);
@@ -74,7 +76,9 @@ public class Drawing : StrokeCollection, IDrawing, INotifyPropertyChanged
             var drawingPoints = points.Select(point => new Point(Floor(point.X) - horizontalOffset, Floor(point.Y) - verticalOffset)).ToList();
 
             if (drawingPoints.Count > 1)
+            {
                 g.DrawLines(blackPen, drawingPoints.ToArray());
+            }
         }
 
         return bitmap;
@@ -82,25 +86,18 @@ public class Drawing : StrokeCollection, IDrawing, INotifyPropertyChanged
     public virtual ImageSource ToImageSource() => ToBitmap().ToImageSource();
     public virtual string ToBase64()
     {
-        using (var ms = new MemoryStream())
-        {
-            using (var bitmap = ToBitmap())
-            {
-                bitmap.Save(ms, ImageFormat.Bmp);
-                return Convert.ToBase64String(ms.GetBuffer());
-            }
-        }
+        using var ms = new MemoryStream();
+        using var bitmap = ToBitmap();
+
+        bitmap.Save(ms, ImageFormat.Bmp);
+        return Convert.ToBase64String(ms.GetBuffer());
     }
     public virtual byte[] ToByteArray()
     {
-        using (var ms = new MemoryStream())
-        {
-            using (var bitmap = ToBitmap())
-            {
-                bitmap.Save(ms, ImageFormat.Bmp);
-                return ms.GetBuffer();
-            }
-        }
+        using var ms = new MemoryStream();
+        using var bitmap = ToBitmap();
+        bitmap.Save(ms, ImageFormat.Bmp);
+        return ms.GetBuffer();
     }
     public override string ToString()
     {
