@@ -4,8 +4,6 @@
 		<TargetFramework>net8.0-windows</TargetFramework>
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
-		<RootNamespace>InkSharp</RootNamespace>
-		<AssemblyName>InkSharp</AssemblyName>
 		<Description>Extended StrokeCollection to easily save the strokes to an image or byte array.</Description>
 		<Author>Michel Michels</Author>
 		<Title>InkSharp</Title>

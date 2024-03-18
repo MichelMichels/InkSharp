@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace InkSharp.Extensions
+namespace MichelMichels.InkSharp.Extensions;
+
+internal static class ByteArrayExtensions
 {
-    internal static class ByteArrayExtensions
+    public static string ToPrettyString(this byte[] array)
     {
-        public static string ToPrettyString(this byte[] array)
-        {
-            return BitConverter.ToString(array).Replace("-", " ");
-        }
+        return BitConverter.ToString(array).Replace("-", " ");
     }
 }

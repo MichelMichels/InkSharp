@@ -5,12 +5,10 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <RootNamespace>InkSharp.Demo</RootNamespace>
-    <AssemblyName>InkSharp.Demo</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InkSharp\InkSharp.csproj" />
+    <ProjectReference Include="..\InkSharp\MichelMichels.InkSharp.csproj" />
   </ItemGroup>
 
 </Project>

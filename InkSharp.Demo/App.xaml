@@ -1,8 +1,7 @@
-﻿<Application x:Class="InkSharp.Demo.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:InkSharp.Demo">
-    <Application.Resources>
-         
-    </Application.Resources>
+﻿<Application
+    x:Class="MichelMichels.InkSharp.Demo.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MichelMichels.InkSharp.Demo">
+    <Application.Resources />
 </Application>
