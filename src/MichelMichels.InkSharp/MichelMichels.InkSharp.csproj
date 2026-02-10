@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0-windows</TargetFramework>
+		<TargetFramework>net10.0-windows</TargetFramework>
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<Description>Extended StrokeCollection to easily save the strokes to an image or byte array.</Description>
@@ -12,13 +12,12 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageReleaseNotes>
-			* .NET8.0 upgrade
-			* Breaking change: namespace change to MichelMichels.InkSharp
+			* .NET10.0 upgrade
 		</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="System.Drawing.Common" Version="8.0.3" />
+		<PackageReference Include="System.Drawing.Common" Version="10.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
